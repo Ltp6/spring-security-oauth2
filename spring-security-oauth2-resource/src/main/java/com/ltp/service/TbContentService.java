@@ -15,4 +15,10 @@ public interface TbContentService {
     List<TbContent> selectAll();
 
     TbContent queryById(String id);
+
+    int add(TbContent tbContent);
+
+    int update(TbContent tbContent);
+
+    int delete(String id);
 }

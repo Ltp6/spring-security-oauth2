@@ -30,4 +30,19 @@ public class TbContentServiceImpl implements TbContentService {
     public TbContent queryById(String id) {
         return tbContentMapper.selectByPrimaryKey(id);
     }
+
+    @Override
+    public int add(TbContent tbContent) {
+        return tbContentMapper.insert(tbContent);
+    }
+
+    @Override
+    public int update(TbContent tbContent) {
+        return tbContentMapper.updateByPrimaryKey(tbContent);
+    }
+
+    @Override
+    public int delete(String id) {
+        return tbContentMapper.deleteByPrimaryKey(id);
+    }
 }

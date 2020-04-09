@@ -13,7 +13,7 @@ class SpringSecurityOauth2ResourceApplicationTests {
 
     @Test
     void contextLoads() {
-        System.out.println(tbContentService.queryById("28"));
+        System.out.println(tbContentService.delete("31"));
     }
 
 }
