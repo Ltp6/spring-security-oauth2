@@ -13,6 +13,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
+import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
+import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
@@ -57,6 +59,10 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         // 设置令牌
         endpoints.tokenStore(tokenStore());
+//        DefaultTokenServices defaultTokenServices = (DefaultTokenServices)endpoints.getDefaultAuthorizationServerTokenServices();
+//        defaultTokenServices.setSupportRefreshToken(true);
+//        defaultTokenServices.setReuseRefreshToken(true);
+//        endpoints.tokenServices(defaultTokenServices);
     }
 
     @Override
